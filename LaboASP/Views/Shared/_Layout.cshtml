@@ -1,0 +1,109 @@
+﻿@using ProductManagement.ASP.Utils
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LaboASP</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LaboASP.styles.css" asp-append-version="true" />
+
+</head>
+
+@{
+    string prodLk = ""; 
+    string catLk = ""; 
+    string clientLk = ""; 
+    string orderLk = ""; 
+    switch (ViewContext.RouteData.Values["controller"])
+    {
+        case "Product":
+            prodLk = "activeLk";
+            break;
+        case "Category":
+            catLk = "activeLk";
+            break;
+        case "Client":
+            clientLk = "activeLk";
+            break;
+        case "Order":
+            orderLk = "activeLk";
+            break;
+        default:
+            break;
+    }
+}
+
+<body>
+    <header>
+        <div>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Product" asp-action="Index">Gestion de produits</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-row">
+        <div class="nav-col">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="@prodLk">
+                        <a asp-area="" asp-controller="Product" asp-action="Index"> Produits</a>
+                    </li>
+                    <li class="@catLk">
+                        <a asp-area="" asp-controller="Category" asp-action="Index">Catégories</a>
+                    </li>
+                    <li class="@clientLk">
+                        <a asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
+                    </li>
+                    <li class="@orderLk">
+                        <a asp-area="" asp-controller="Order" asp-action="Index">Commandes</a>
+                    </li>
+                </ul>
+        </div>
+        <main role="main" class="main-div">
+            <div class="subMain-div">
+            @RenderBody()
+            </div>
+        </main>
+    </div>
+
+@*    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - LaboASP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+
+    <script src="~/js/functions.js" type="text/javascript"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+            @if (TempData.Success() != null)
+            {
+                <text>
+                    toastr.success('@TempData.Success()');
+                </text>
+            }
+            @if (TempData.Error() != null)
+            {
+                <text>
+                    toastr.error('@TempData.Error()');
+                </text>
+            }
+
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

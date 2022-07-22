@@ -1,0 +1,23 @@
+﻿<div class="modal fade" id="detailsModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="detailsFields">
+
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                 <a href="#" class="btn btn-warning" id="editBtn">Modifier</a>
+                <a class="btn btn-secondary btn-cancel end" data-bs-dismiss="modal">Fermer</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).on("click", ".detailsBtn", function(e) {
+        e.preventDefault();
+        ShowDetails($(this).attr("name"), $(this).val());
+    });
+</script>

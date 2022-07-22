@@ -1,0 +1,39 @@
+﻿<div class="modal fade" id="editModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="text-center">Modifier le produit?</p>
+            </div>
+            <div class="modal-footer justify-content-around">
+                <a href="#" class="btn btn-primary btn-warning" id="editBtn">Modifier</a>
+                <a class="btn btn-secondary btn-cancel end" data-bs-dismiss="modal">Annuler</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="warningModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="text-danger text-center">Les champs sont inchangés!</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a class="btn btn-secondary btn-cancel end" data-bs-dismiss="modal">Annuler</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    EditFormInit();
+    let modelInit = {
+        "name": $('#name').val(),
+        "description": $('#description').val(),
+        "price": $('#price').val(),
+        "selectedCategories": $('.selectCat').val()
+    };
+    document.getElementById("editProd").addEventListener("click", (e) => {
+        EditCheckFields(e, modelInit);
+    });
+</script>

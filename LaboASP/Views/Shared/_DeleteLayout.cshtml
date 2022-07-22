@@ -1,0 +1,35 @@
+﻿<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                @{
+                    switch (ViewContext.RouteData.Values["controller"]?.ToString())
+                    {
+                        case "Product":
+                                <p>Supprimer le produit?</p>
+                            break;
+                        case "Category":
+                                <p>Supprimer la catégorie?</p> 
+                            break;
+                        case "Client" :
+                                <p>Supprimer le client?</p> 
+                            break;
+                        case "Order" :
+                                <p>Supprimer la commande?</p> 
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            </div>
+            <div class="modal-footer justify-content-around">
+                <a href="#" class="btn btn-primary btn-danger" id="deleteBtn">Supprimer</a>
+                <a class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Annuler</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    Askdelete();
+</script>

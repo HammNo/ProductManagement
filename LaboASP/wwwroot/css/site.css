@@ -1,0 +1,230 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: tan;
+    position: absolute;
+    margin-bottom: 60px;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5em;
+}
+
+.product_action {
+    display: inline;
+}
+
+.modal-dialog {
+    position: relative;
+    top: 15%;
+}
+
+.modal-content {
+    background: #212529;
+    color: white;
+}
+
+#detailsModal .modal-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#detailsModal #detailsFields {
+    width: 70%;
+    height: 100%;
+}
+
+#detailsModal p {
+    margin : 0px;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-10 {
+    width: 10%
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-35 {
+    width: 35%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.table {
+    font-family: monospace !important;
+    background-color: #BCC4CC;
+}
+
+
+thead {
+    background-color: #3C444C;
+    color: white;
+}
+
+.sort td {
+    padding-left: 20px !important;
+}
+
+.sort th {
+    padding-left: 12px !important;
+}
+
+
+.dropdown {
+    padding-left: 15px;
+}
+
+
+.navbar .nav-item .dropdown-menu {
+    display: none;
+}
+
+.navbar .nav-item:hover .nav-link {
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+}
+
+.inlineOptions{
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+}
+
+.navbar{
+    margin : 0px !important;
+}
+.container-row{
+    height: 90%;
+    width : 100%;
+    display: flex;
+    flex-direction: row;
+}
+.nav-col {
+    width: 10%;
+    min-width: 150px;
+    background-color: rgba(var(--bs-dark-rgb));
+    display: flex;
+    flex-direction: column;
+    border-bottom-right-radius : 30px;
+    border-right : 2px solid white;
+}
+.main-div {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.subMain-div {
+    margin-top : 25px;
+    width: 80%;
+}
+
+.nav-col ul{
+    position: relative;
+    top: 20%;
+    width : 100%;
+}
+
+.nav-col li {
+    transition-duration: 0.3s;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.nav-col a{
+    font-size: 1.1em;
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    height : 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-col li:hover {
+    background-color: #d2b48c;
+}
+
+.activeLk {
+    background-color: #888581;
+}
+
+.flexRowCenter{
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-tan{
+    color : tan;
+}
+
+.flexColAr{
+    display : flex;
+    flex-direction : column;
+    justify-content : space-around;
+}
+
+.orderInfoLine{
+    width : 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.orderInfoLine p {
+    padding-top : 5px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+.orderInfoDiv {
+    width: 50%;
+    min-width: 300px;
+    background-color: #3C444C;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+}
